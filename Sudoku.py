@@ -35,7 +35,7 @@ class Tablo():
         unsolved.sort(key=lambda x: len(x.possibles))
         return unsolved
     def __str__(self):
-        cikti="\n\n    | | | | | | | | |\n  - "
+        cikti="\n\n    | | | | | | | | |  -  (j)\n  - "
         for i in range(9):
             c=0
             for e in self.dizi[i]:
@@ -49,7 +49,7 @@ class Tablo():
             elif i!=8:
                 cikti += "\n  - "
             else:
-                cikti += "\n\n"
+                cikti += "\n\n  |\n\n (i)"
         return cikti
 class Eleman():
     def __init__(self, i, j, value):
