@@ -93,50 +93,52 @@ def solve(tablo):
     lst = tablo.getUnsolved()
 
     if len(lst) == 0:
-        return tablo
+        return True
     elif len(lst[0].possibles) == 0:
-        return None
+        return False
     else:
         for possible in lst[0].possibles:
             x = lst[0].row
             y = lst[0].column
             tablo.grid[x][y].value = possible
 
-            if solve(tablo) is None:
+            if solve(tablo) is False:
                 tablo.grid[x][y].value = 0
 
             else:
 
-                return tablo
-        return None
+                return True
+        return False
 
 
-ornek = Table()
+example = Table()
 
-ornek.setElement(0, 0, 8)
-ornek.setElement(1, 2, 3)
-ornek.setElement(2, 1, 7)
-ornek.setElement(1, 3, 6)
-ornek.setElement(2, 4, 9)
-ornek.setElement(2, 6, 2)
-ornek.setElement(3, 1, 5)
-ornek.setElement(3, 5, 7)
-ornek.setElement(4, 4, 4)
-ornek.setElement(4, 5, 5)
-ornek.setElement(4, 6, 7)
-ornek.setElement(5, 3, 1)
-ornek.setElement(5, 7, 3)
-ornek.setElement(6, 2, 1)
-ornek.setElement(6, 8, 8)
-ornek.setElement(6, 7, 6)
-ornek.setElement(7, 2, 8)
-ornek.setElement(7, 3, 5)
-ornek.setElement(7, 7, 1)
-ornek.setElement(8, 1, 9)
-ornek.setElement(8, 6, 4)
-ornek.updateUnsolved()
-print(ornek)
+example.setElement(0, 0, 8)
+example.setElement(1, 2, 3)
+example.setElement(2, 1, 7)
+example.setElement(1, 3, 6)
+example.setElement(2, 4, 9)
+example.setElement(2, 6, 2)
+example.setElement(3, 1, 5)
+example.setElement(3, 5, 7)
+example.setElement(4, 4, 4)
+example.setElement(4, 5, 5)
+example.setElement(4, 6, 7)
+example.setElement(5, 3, 1)
+example.setElement(5, 7, 3)
+example.setElement(6, 2, 1)
+example.setElement(6, 8, 8)
+example.setElement(6, 7, 6)
+example.setElement(7, 2, 8)
+example.setElement(7, 3, 5)
+example.setElement(7, 7, 1)
+example.setElement(8, 1, 9)
+example.setElement(8, 6, 4)
 
-solve(ornek)
+example.updateUnsolved()
 
-print(ornek)
+print(example)
+if solve(example):
+    print(example)
+else:
+    print("Not a valid Sudoku")
