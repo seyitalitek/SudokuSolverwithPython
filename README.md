@@ -1,5 +1,5 @@
 ## Sudoku Solver with Python 
 
-A simple Sudoku solver with Java, created with learning objectives
+A simple Sudoku solver with Python, created with learning objectives
 
 <p><img src="https://github.com/seyitalitek/SudokuSolverwithPython/blob/master/solution.gif" alt="An example of solution gif" width="800vw"/></p>
