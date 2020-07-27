@@ -93,22 +93,22 @@ def solve(tablo):
     lst = tablo.getUnsolved()
 
     if len(lst) == 0:
-        return tablo
+        return True
     elif len(lst[0].possibles) == 0:
-        return None
+        return False
     else:
         for possible in lst[0].possibles:
             x = lst[0].row
             y = lst[0].column
             tablo.grid[x][y].value = possible
 
-            if solve(tablo) is None:
+            if solve(tablo) is False:
                 tablo.grid[x][y].value = 0
 
             else:
 
-                return tablo
-        return None
+                return True
+        return False
 
 
 ornek = Table()
@@ -134,9 +134,11 @@ ornek.setElement(7, 3, 5)
 ornek.setElement(7, 7, 1)
 ornek.setElement(8, 1, 9)
 ornek.setElement(8, 6, 4)
+
 ornek.updateUnsolved()
-print(ornek)
-
-solve(ornek)
 
 print(ornek)
+if solve(ornek):
+    print(ornek)
+else:
+    print("Not a valid Sudoku")
