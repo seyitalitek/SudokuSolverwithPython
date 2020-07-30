@@ -2,6 +2,10 @@
 
 A simple Sudoku solver with Python, created with learning objectives
 
+With python, it takes approx. 9 times longer than with java. 
+
+[Sudoku Solver with Java (Based on same logic)](https://github.com/seyitalitek/SudokuSolverwithJava)
+
 <p><img src="https://github.com/seyitalitek/SudokuSolverwithPython/blob/master/solution.gif" alt="An example of solution gif" width="800vw"/></p>
 
 
